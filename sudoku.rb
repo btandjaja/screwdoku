@@ -48,8 +48,8 @@ class SudokuGame
 
   def play_turn
     board.render
-    val = get_pos
-    pos = get_val
+    pos = get_pos #1,2
+    val = get_val #8
     board[pos] = val
   end
 
@@ -73,6 +73,8 @@ class SudokuGame
     val.is_a?(Integer) &&
       val.between?(0, 9)
   end
+
+
 
   private
   attr_reader :board
