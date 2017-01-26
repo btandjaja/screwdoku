@@ -1,12 +1,12 @@
 require "colorize"
-
-puts "MUAHAHA.  The dastardly unexpected end statement.\n".red
-puts "Do NOT try to solve this error by going one method at a time and looking for an 'end'.\n".red
-puts "Instead, comment out half of the bad file at a time until the error changes.  Keep narrowing down from there.".red
-puts ""
-puts "Does this approach feel familiar?  The approach is a version of binary search.\n\n".red
-
 require_relative "board"
+# puts "MUAHAHA.  The dastardly unexpected end statement.\n".red
+# puts "Do NOT try to solve this error by going one method at a time and looking for an 'end'.\n".red
+# puts "Instead, comment out half of the bad file at a time until the error changes.  Keep narrowing down from there.".red
+# puts ""
+# puts "Does this approach feel familiar?  The approach is a version of binary search.\n\n".red
+
+
 
 class SudokuGame
   def self.from_file(filename)
@@ -82,10 +82,11 @@ class SudokuGame
       val.between?(0, 9)
   end
 
-  private
-  attr_reader :board
+ private
+ attr_reader :board
 end
 
-
-game = SudokuGame.from_file("puzzles/sudoku1.txt")
-game.run
+if $0 == __FILE__
+ game = SudokuGame.from_file("puzzles/sudoku1.txt")
+ game.run
+end
