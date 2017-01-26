@@ -1,4 +1,6 @@
-require_relative "board"
+require_relative 'board'
+# require 'board'
+
 
 class SudokuGame
   def self.from_file(filename)
@@ -78,6 +80,7 @@ class SudokuGame
   attr_reader :board
 end
 
-
-game = SudokuGame.from_file("puzzles/sudoku1.txt")
-game.run
+if $0 == __FILE__
+  game = SudokuGame.from_file("puzzles/sudoku1.txt")
+  game.run
+end
